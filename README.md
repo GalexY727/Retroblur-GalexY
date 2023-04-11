@@ -33,3 +33,4 @@ spicetify apply
 
 To change the background, 
 edit the link on in [user.css](https://github.com/GalexY727/Retroblur-GalexY/blob/main/user.css#L30) (line 30 or so)
+If you need any inspiration, check out my [wallpaper of the day](https://github.com/galexy727)!
