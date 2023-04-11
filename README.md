@@ -5,7 +5,7 @@ Based on https://github.com/Motschen/Retroblur based on https://github.com/schne
 Copyright © 2022 Motschen - MIT License<br>
 
 
-![Home](preview/Home-Page.png)
+![Home](preview/Home-Page.jpg)
 
 ![Playlist](preview/Playlist-Page.png)
 
