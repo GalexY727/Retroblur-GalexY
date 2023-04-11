@@ -8,6 +8,11 @@
   --spice-main: transparent;
   --spice-misc: rgba(30, 30, 30, 0.8);
   --spice-player: rgba(30, 30, 30, 0.4);
+  /* 
+    This color is used in the progress bar gradient 
+    as well as the heart hover color transition
+  */
+  --pink: #f70aff;
   --bg: url(--spice-wallpaper);
 }
 /*
@@ -22,7 +27,8 @@
  Forest (Green): https://i.imgur.com/hnpaDeR.jpg
  */
 body {
-    background-image: url("https://github.com/Motschen/Retroblur/blob/main/assets/background_purple.jpg?raw=true") !important;
+    background-image: url("https://raw.githubusercontent.com/DenverCoder1/minimalistic-wallpaper-collection/main/images/olly-moss-firewatch-night.jpg") !important;
+    backdrop-filter: blur(4px) !important;
     background-repeat: no-repeat;
     background-size: 100%;
 }
@@ -153,8 +159,12 @@ div[aria-selected="true"] > div > div.main-trackList-rowSectionStart > div > div
 @keyframes fadingGlowWhite {
   from {} to { filter: drop-shadow(0 0 6px); }
 }
+@keyframes colorShift {
+  from {} to { color: var(--pink); }
+}
 .gSLhUO:hover, .main-playButton-PlayButton.main-playButton-primary:hover, .main-pageErrorTemplate-errorButton:hover, div.GlueDropTarget.personal-library >*.active:hover, .main-rootlist-rootlistItemLink.main-rootlist-rootlistItemLinkActive:hover, .main-navBar-navBarLinkActive:hover, .control-button-heart:hover, .gHYQaG:hover, .iaAUvZ:hover {
     animation: fadingGlow 1s ease 0.5 forwards !important;
+    animation: colorShift 1s ease 0.5 forwards !important;
 }
 a:hover, .main-trackList-rowPlayPauseButton:hover, svg:hover {
     animation: fadingGlowWhite 1s ease 0.5 forwards;
@@ -200,7 +210,7 @@ div.GlueDropTarget.personal-library {
     padding: 0 0px !important;
 }
 .playback-bar .progress-bar__slider {
-    filter: drop-shadow(0 0 6px var(--spice-button));
+  filter: drop-shadow(0 0 6px var(--spice-button));
 }
 .main-coverSlotExpanded-container {
     -webkit-box-reflect: below;
@@ -300,7 +310,7 @@ div.GlueDropTarget.personal-library {
 .main-playButton-PlayButton.main-playButton-primary, .main-pageErrorTemplate-errorButton {
   color: var(--spice-shadow) !important;
 }
-.main-skipBackButton-button, .main-skipForwardButton-button, .control-button {
+.main-skipBackButton-button, .main-skipForwardButton-button, .control-button:not(.control-button-heart)  {
   color: var(--spice-button) !important;
 }
 button.switch {
@@ -566,7 +576,6 @@ path[d="M23 0C10.298 0 0 10.297 0 23c0 12.702 10.298 23 23 23 12.703 0 23-10.298
 } */
 /* modals */
 .main-trackCreditsModal-container, .main-aboutRecsModal-container, .main-playlistEditDetailsModal-container, .profile-userEditDetails-container, .artist-artistAbout-modal {
-
   border-radius: var(--border-radius-1) !important;
 }
 .main-playlistEditDetailsModal-titleInput, .main-playlistEditDetailsModal-descriptionTextarea, .main-playlistEditDetailsModal-titleInput:focus, .main-playlistEditDetailsModal-descriptionTextarea:focus, .playlist-inlineSearchBox-filterInput {
@@ -678,6 +687,12 @@ input:hover:not([disabled]):not(:active)~.x-toggle-indicatorWrapper {
 .progress-bar {
   --fg-color: var(--spice-button-active);
 }
+.playback-bar .x-progressBar-fillColor {
+  background: linear-gradient(to left, var(--spice-button-active), var(--pink)) !important;
+}
+.volume-bar .x-progressBar-fillColor {
+  background: linear-gradient(to left, var(--spice-button-active), rgb(200, 200, 200)) !important;
+}
 .now-playing-bar .cover-art-image {
   border-radius: var(--border-radius-2);
 }
@@ -731,7 +746,7 @@ input:hover:not([disabled]):not(:active)~.x-toggle-indicatorWrapper {
   width: 24px;
 }
 .progress-bar--is-active .progress-bar__slider:focus {
-  background-color: var(--spice-button);
+  background-color: var(--spice-button);  
 }
 .playback-bar {
   width: 100%;
