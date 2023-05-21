@@ -24,7 +24,7 @@ clone this repository into
 Then, open a terminal and type:
 
 ```bash
-spicetify config current_theme galexy
+spicetify config current_theme retroblur-galexy
 spicetify config color_scheme blue
 spicetify apply
 ```
